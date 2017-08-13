@@ -45,7 +45,7 @@ MM    | Minute offset from UTC  | 00
 
 ## Datetime
 
-Datetime is combination of both [Date](#Date) and [Time](#Time). It consists of the _date_ element, followed by `T`, and then the _time_ element.
+Datetime is combination of both [Date](#date) and [Time](#time). It consists of the _date_ element, followed by `T`, and then the _time_ element.
 
 Format: `yyy-mm-ddThh:mm±HH:MM`
 
@@ -72,20 +72,20 @@ Field      | Type                       | Description
 version    | string                     | Version of Event File Format                                                              |
 name       | string                     | Name of Competition                                                                       |
 licence    | set of string              | Licence IDs/Numbers for the competition (Optional)                                        |
-start      | [date](#Date)              | Start date of competition (see [Date](#Date))                                             |
-end        | [date](#Date)              | End date of competition (see [Date](#Date))                                               |
-ageat      | [date](#Date)              | Date that ages are calculated from (see [Date](#Date)) (Optional)                         |
-timeage    | [date](#Date)              | Date after which times must have been performed (Optional)                                |
-deadline   | [datetime](#Datetime)      | Deadline for entries (host may permit entries after deadline) (see [Datetime](#Datetime)) |
+start      | [date](#date)              | Start date of competition (see [Date](#date))                                             |
+end        | [date](#date)              | End date of competition (see [Date](#date))                                               |
+ageat      | [date](#date)              | Date that ages are calculated from (see [Date](#date)) (Optional)                         |
+timeage    | [date](#date)              | Date after which times must have been performed (Optional)                                |
+deadline   | [datetime](#datetime)      | Deadline for entries (host may permit entries after deadline) (see [Datetime](#datetime)) |
 max_rentry | integer                    | Maximum relay entries per athlete                                                         |
 max_ientry | integer                    | Maximum individual entries per athlete                                                    |
 max_entry  | integer                    | Total maximum entries per athlete (independent of `max_ientry` & `max_rentry`)            |
 software   | string                     | Software that produced this file                                                          |
 softver    | string                     | Version of software that produced this file                                               |
-export     | [datetime](#Datetime)      | Date/Time file was generated (see [Datetime](#Datetime))                                  |
-host       | [host](#Host)              | Competition Host's details (see [Host](#Host))                                            |
-venue      | [venue](#Venue)            | Competition Venue's details (see [Venue](#Venue))                                         |
-session    | set of [session](#Session) | Competition Session details (see [Session](#Session))                                     |
+export     | [datetime](#datetime)      | Date/Time file was generated (see [Datetime](#datetime))                                  |
+host       | [host](#host)              | Competition Host's details (see [Host](#host))                                            |
+venue      | [venue](#venue)            | Competition Venue's details (see [Venue](#venue))                                         |
+session    | set of [session](#session) | Competition Session details (see [Session](#session))                                     |
 
 ### Example
 
@@ -145,7 +145,7 @@ Field   | Type                | Description
 ------- | ------------------- | ----------------------------------------------
 id      | uuid                | Unique ID of host (tied to host's licence key) |
 name    | string              | Name of host                                   |
-address | [address](#Address) | Address of host (see [Address](#Address))      |
+address | [address](#address) | Address of host (see [Address](#address))      |
 website | string              | Website of host (optional)                     |
 email   | array of string     | Array of Email Addresses                       |
 phone   | array of string     | Array of Phone Numbers                         |
@@ -228,11 +228,11 @@ length | string  | Length of pool. Distance as an integer. Units as a character 
 Field   | Type                 | Description
 ------- | -------------------- | ------------------------------------------
 name    | string               | Name of venue                              |
-address | [address](#Address)  | Address of venue (see [Address](#Address)) |
+address | [address](#address)  | Address of venue (see [Address](#address)) |
 website | string               | Website of venue (Optional)                |
 email   | array of string      | Array of Email Addresses (Optional)        |
 phone   | array of string      | Array of Phone Numbers (Optional)          |
-pool    | set of [pool](#Pool) | Set of pools (see [Pool](#Pool))           |
+pool    | set of [pool](#pool) | Set of pools (see [Pool](#pool))           |
 
 #### Example
 
@@ -268,11 +268,11 @@ Field  | Type                   | Description
 ------ | ---------------------- | ----------------------------------------------
 id     | uuid                   | Unique ID of session                           |
 name   | string                 | Name/Number of session                         |
-date   | [date](#Date)          | Date of session (see [Date](#Date))            |
-start  | [time](#Time)          | Start time of session (see [Time](#Time))      |
-warmup | [time](#Time)          | Warmup time of session (see [Time](#Time))     |
-signin | [time](#Time)          | Sign-In time of session (see [Time](#Time))    |
-events | set of [event](#event) | Set of Events in session (see [Event](#Event)) |
+date   | [date](#date)          | Date of session (see [Date](#date))            |
+start  | [time](#time)          | Start time of session (see [Time](#time))      |
+warmup | [time](#time)          | Warmup time of session (see [Time](#time))     |
+signin | [time](#time)          | Sign-In time of session (see [Time](#time))    |
+events | set of [event](#event) | Set of Events in session (see [Event](#event)) |
 
 ### Example
 
@@ -297,12 +297,12 @@ Field    | Type                       | Description
 id       | uuid                       | Unique ID of event                                                 |
 number   | integer                    | Number of event                                                    |
 title    | string                     | Title of Event                                                     |
-gender   | [gender](#Gender)          | Gender of event (see [Gender](#Gender))                            |
-distance | integer                    | Distance of event (unit is determined by the [pool](#Pool) object) |
-stroke   | [stroke](#Stroke)          | Stroke of event (see [Stroke](#Stroke))                            |
-round    | [round](#Round)            | Round of event (see [Round](#Round))                               |
+gender   | [gender](#gender)          | Gender of event (see [Gender](#gender))                            |
+distance | integer                    | Distance of event (unit is determined by the [pool](#pool) object) |
+stroke   | [stroke](#stroke)          | Stroke of event (see [Stroke](#stroke))                            |
+round    | [round](#round)            | Round of event (see [Round](#round))                               |
 price    | decimal                    | Price of event                                                     |
-agegroup | set [agegroup](#Age_Group) | Set of Age Groups for event (see [Age Group](#Age_Group))          |
+agegroup | set [agegroup](#age-group) | Set of Age Groups for event (see [Age Group](#age-group))          |
 
 ### Mappings
 
