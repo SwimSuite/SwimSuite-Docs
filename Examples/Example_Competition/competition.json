@@ -1,0 +1,120 @@
+{
+  "competition": {
+    "version": "1.0.0",
+    "name": "Example Competition",
+    "licence": ["licence1", "licence2"],
+    "start": "2017-05-01",
+    "end": "2017-05-02",
+    "ageat": "2017-05-02",
+    "deadline": "2017-03-31T23:59+01:00",
+    "max_entry": 3,
+    "max_rentry": 1,
+    "max_ientry": 4,
+    "software": "SwimSuite Race",
+    "softver": "0.1.0",
+    "export": "2017-02-04T18:35+00:00",
+    "host": {
+      "id": "24a3be9a-3010-4e69-9f26-34df03da297c",
+      "name": "Example Swimming Club",
+      "address": {
+        "line1": "Address Line 1",
+        "city": "Exampletown",
+        "county": "Exampleshire",
+        "postcode": "EX4 1MP",
+        "country": "UK"
+      },
+      "website": "http://www.exampleclub.org.uk",
+      "email": [
+        "meet@club.org",
+        "secretary@club.org"
+      ],
+      "phone": [
+        "01234 567890",
+        "07654 321098"
+      ]
+    },
+    "venue": {
+      "name": "Example Sports Centre",
+      "address": {
+        "line1": "Example Sports Centre",
+        "city": "Examplecity",
+        "county": "Exampleshire",
+        "postcode": "EX4 1MP",
+        "country": "UK"
+      },
+      "website": "www.examplesportscentre.co.uk",
+      "phone": [],
+      "email": [],
+      "pool": [{
+          "id": "",
+          "name": "Women's Pool",
+          "lanes": 8,
+          "length": "25m"
+        },
+        {
+          "id": "",
+          "name": "Men's Pool",
+          "lanes": 8,
+          "length": "25m"
+        }
+      ]
+    },
+    "session": [{
+      "id": "3a8a57e5-0476-4d3e-bb28-166e65098eb7",
+      "name": "1",
+      "date": "2017-05-12",
+      "start": "17:00",
+      "warmup": "16:00",
+      "signin": "16:15",
+      "events": [
+        {
+          "id": "...",
+          "number": 101,
+          "title": "Boys 11/O 100m Freestyle",
+          "gender": "b",
+          "distance": 100,
+          "stroke": "fc",
+          "round": "tf",
+          "price": "5.50",
+          "agegroup": [
+            {
+              "id": "...",
+              "name": "11 Years",
+              "lage": 11,
+              "uage": 12
+            },
+            {
+              "id": "...",
+              "name": "12 Years",
+              "lage": 12,
+              "uage": 13
+            },
+            {
+              "id": "...",
+              "name": "13 Years",
+              "lage": 13,
+              "uage": 14
+            },
+            {
+              "id": "...",
+              "name": "14 Years",
+              "lage": 14,
+              "uage": 15
+            },
+            {
+              "id": "...",
+              "name": "15 Years",
+              "lage": 15,
+              "uage": 16
+            },
+            {
+              "id": "...",
+              "name": "16 Years/Over",
+              "lage": 16
+            }
+          ]
+        }
+      ]
+    }]
+  }
+}
