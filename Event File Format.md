@@ -16,49 +16,6 @@ Name_of_Competition.ssev/
 └── competition.json.md5
 ```
 
-# Date/Time
-
-`.ssev` files have to take into consideration different time zones. To enable this, dates and times are stored in a specific format.
-
-SwimSuite uses a subset of the ISO 8601 standard. This is because dates and/or times are stored separately from each other.
-
-## Date
-
-Dates are stored in the following format, `yyyy-mm-dd`, where:
-
-Field | Description            | Example
------ | ---------------------- | -------
-yyyy  | 4 digit year           | 2017
-mm    | left zero-padded month | 05
-dd    | left zero-padded date  | 01
-
-## Time
-
-Times are stored in the following format, `hh:mm±HH:MM`, where:
-
-Field | Description             | Example
------ | ----------------------- | -------
-hh    | Hours (in local time)   | 17
-mm    | Minutes (in local time) | 00
-HH    | Hour offset from UTC    | 01
-MM    | Minute offset from UTC  | 00
-
-## Datetime
-
-Datetime is combination of both [Date](#date) and [Time](#time). It consists of the _date_ element, followed by `T`, and then the _time_ element.
-
-Format: `yyy-mm-ddThh:mm±HH:MM`
-
-## Examples
-
-- 5th March 2017: `2017-03-05`
-- April 2nd 2017: `2017-04-02`
-- 17:00 in BST (British Summer Time): `17:00+01:00`
-- 17:00 in GMT (Greenwich Mean Time): `17:00+00:00`
-- 17:00 in PST (Pacific Standard Time): `17:00-08:00`
-- 12:00 (GMT) April 2nd 2017: `2017-04-02T12:00+00:00`
-- 14:00 (BST) 6th May 2017: `2017-05-06T14:00+01:00`
-
 # JSON Structure
 
 ## Competition
@@ -67,25 +24,25 @@ The root node in `competition.json` is the `competition` node.
 
 Although the `session` node contains a set of sessions, the order of sessions is calculated using the `date` and `start` properties.
 
-Field      | Type                       | Description
----------- | -------------------------- | -----------------------------------------------------------------------------------------
-version    | string                     | Version of Event File Format                                                              |
-name       | string                     | Name of Competition                                                                       |
-licence    | set of string              | Licence IDs/Numbers for the competition (Optional)                                        |
-start      | [date](#date)              | Start date of competition (see [Date](#date))                                             |
-end        | [date](#date)              | End date of competition (see [Date](#date))                                               |
-ageat      | [date](#date)              | Date that ages are calculated from (see [Date](#date)) (Optional)                         |
-timeage    | [date](#date)              | Date after which times must have been performed (Optional)                                |
-deadline   | [datetime](#datetime)      | Deadline for entries (host may permit entries after deadline) (see [Datetime](#datetime)) |
-max_rentry | integer                    | Maximum relay entries per athlete                                                         |
-max_ientry | integer                    | Maximum individual entries per athlete                                                    |
-max_entry  | integer                    | Total maximum entries per athlete (independent of `max_ientry` & `max_rentry`)            |
-software   | string                     | Software that produced this file                                                          |
-softver    | string                     | Version of software that produced this file                                               |
-export     | [datetime](#datetime)      | Date/Time file was generated (see [Datetime](#datetime))                                  |
-host       | [host](#host)              | Competition Host's details (see [Host](#host))                                            |
-venue      | [venue](#venue)            | Competition Venue's details (see [Venue](#venue))                                         |
-session    | set of [session](#session) | Competition Session details (see [Session](#session))                                     |
+Field      | Type                           | Description
+---------- | ------------------------------ | --------------------------------------------------------------------------------------------------
+version    | string                         | Version of Event File Format                                                                       |
+name       | string                         | Name of Competition                                                                                |
+licence    | set of string                  | Licence IDs/Numbers for the competition (Optional)                                                 |
+start      | [date](Common.md#date)         | Start date of competition (see [Date](Common.md#date))                                             |
+end        | [date](Common.md#date)         | End date of competition (see [Date](Common.md#date))                                               |
+ageat      | [date](Common.md#date)         | Date that ages are calculated from (see [Date](Common.md#date)) (Optional)                         |
+timeage    | [date](Common.md#date)         | Date after which times must have been performed (Optional)                                         |
+deadline   | [datetime](Common.md#datetime) | Deadline for entries (host may permit entries after deadline) (see [Datetime](Common.md#datetime)) |
+max_rentry | integer                        | Maximum relay entries per athlete                                                                  |
+max_ientry | integer                        | Maximum individual entries per athlete                                                             |
+max_entry  | integer                        | Total maximum entries per athlete (independent of `max_ientry` & `max_rentry`)                     |
+software   | string                         | Software that produced this file                                                                   |
+softver    | string                         | Version of software that produced this file                                                        |
+export     | [datetime](Common.md#datetime) | Date/Time file was generated (see [Datetime](Common.md#datetime))                                  |
+host       | [host](#host)                  | Competition Host's details (see [Host](#host))                                                     |
+venue      | [venue](#venue)                | Competition Venue's details (see [Venue](#venue))                                                  |
+session    | set of [session](#session)     | Competition Session details (see [Session](#session))                                              |
 
 ### Example
 
@@ -113,42 +70,18 @@ session    | set of [session](#session) | Competition Session details (see [Sess
 }
 ```
 
-## Address
-
-The address object is consistently used across the Event File Format.
-
-Field    | Type   | Description
--------- | ------ | -----------------------------------
-line1    | string | Address Line 1                      |
-line2    | string | Address Line 2 (Optional)           |
-county   | string | County/State/Province (Optional)    |
-postcode | string | Post Code/Zip Code                  |
-country  | string | ISO Alpha-2 Country Code (Optional) |
-
-For example:
-
-```
-{
-  "line1": "Address Line 1",
-  "city": "Exampletown",
-  "county": "Exampleshire",
-  "postcode": "EX4 1MP",
-  "country": "UK"
-}
-```
-
 ## Host
 
 This structure details the competition host.
 
-Field   | Type                | Description
-------- | ------------------- | ----------------------------------------------
-id      | uuid                | Unique ID of host (tied to host's licence key) |
-name    | string              | Name of host                                   |
-address | [address](#address) | Address of host (see [Address](#address))      |
-website | string              | Website of host (optional)                     |
-email   | array of string     | Array of Email Addresses                       |
-phone   | array of string     | Array of Phone Numbers                         |
+Field   | Type                         | Description
+------- | ---------------------------- | --------------------------------------------------
+id      | uuid                         | Unique ID of host (tied to host's licence key)     |
+name    | string                       | Name of host                                       |
+address | [address](Common.md#address) | Address of host (see [Address](Common.md#address)) |
+website | string                       | Website of host (optional)                         |
+email   | array of string              | Array of Email Addresses                           |
+phone   | array of string              | Array of Phone Numbers                             |
 
 Example:
 
@@ -225,14 +158,14 @@ length | string  | Length of pool. Distance as an integer. Units as a character 
 
 ### Venue Details
 
-Field   | Type                 | Description
-------- | -------------------- | ------------------------------------------
-name    | string               | Name of venue                              |
-address | [address](#address)  | Address of venue (see [Address](#address)) |
-website | string               | Website of venue (Optional)                |
-email   | array of string      | Array of Email Addresses (Optional)        |
-phone   | array of string      | Array of Phone Numbers (Optional)          |
-pool    | set of [pool](#pool) | Set of pools (see [Pool](#pool))           |
+Field   | Type                         | Description
+------- | ---------------------------- | ---------------------------------------------------
+name    | string                       | Name of venue                                       |
+address | [address](Common.md#address) | Address of venue (see [Address](Common.md#address)) |
+website | string                       | Website of venue (Optional)                         |
+email   | array of string              | Array of Email Addresses (Optional)                 |
+phone   | array of string              | Array of Phone Numbers (Optional)                   |
+pool    | set of [pool](#pool)         | Set of pools (see [Pool](#pool))                    |
 
 #### Example
 
@@ -265,14 +198,14 @@ pool    | set of [pool](#pool) | Set of pools (see [Pool](#pool))           |
 A normal competition is broken into sessions and events. The container for events is a session.
 
 Field  | Type                   | Description
------- | ---------------------- | ----------------------------------------------
-id     | uuid                   | Unique ID of session                           |
-name   | string                 | Name/Number of session                         |
-date   | [date](#date)          | Date of session (see [Date](#date))            |
-start  | [time](#time)          | Start time of session (see [Time](#time))      |
-warmup | [time](#time)          | Warmup time of session (see [Time](#time))     |
-signin | [time](#time)          | Sign-In time of session (see [Time](#time))    |
-events | set of [event](#event) | Set of Events in session (see [Event](#event)) |
+------ | ---------------------- | ----------------------------------------------------
+id     | uuid                   | Unique ID of session                                 |
+name   | string                 | Name/Number of session                               |
+date   | [date](Common.md#date) | Date of session (see [Date](Common.md#date))         |
+start  | [time](Common.md#time) | Start time of session (see [Time](Common.md#time))   |
+warmup | [time](Common.md#time) | Warmup time of session (see [Time](Common.md#time))  |
+signin | [time](Common.md#time) | Sign-In time of session (see [Time](Common.md#time)) |
+events | set of [event](#event) | Set of Events in session (see [Event](#event))       |
 
 ### Example
 
