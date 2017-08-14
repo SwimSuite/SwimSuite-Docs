@@ -26,7 +26,7 @@ country  | string | ISO Alpha-2 Country Code (Optional) |
 
 ## Date/Time
 
-`.ssev` files have to take into consideration different time zones. To enable this, dates and times are stored in a specific format.
+SwimSuite Interchange files have to take into consideration different time zones. To enable this, dates and times are stored in a specific format.
 
 SwimSuite uses a subset of the ISO 8601 standard. This is because dates and/or times are stored separately from each other.
 
