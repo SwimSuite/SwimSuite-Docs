@@ -48,7 +48,7 @@ Field    | Type                                | Description
 id       | uuid                                | Unique ID of Team (from SwimSuite Entry)                                  |
 name     | string                              | Team Name                                                                 |
 abbr     | string                              | Team abbreviation (max 4 chars)                                           |
-address  | set of [address](Common.md#address) | Set of Addresses (see [Common](Commond.md)->[Address](Common.md#address)) |
+address  | set of [address](Common.md#address) | Set of Addresses (see [Common](Common.md)->[Address](Common.md#address)) |
 phone    | set of string                       | Set of phone numbers (this may be meet secretary, coach, etc) (Optional)  |
 email    | set of string                       | Set of email addresses                                                    |
 athletes | set of [athlete](#athlete)          | Set of Athletes (see [Athlete](#Athlete))                                 |
@@ -92,9 +92,9 @@ prefname    | string                       | Preferred firstname (display name) 
 gender      | string                       | Gender (m=male, f=female)                                         |
 email       | string                       | Email Address                                                     |
 phone       | string                       | Phone Number                                                      |
-dob         | [date](Common.md#date)       | SwimSuite Date (see [Common](Commond.md)->[Date](Common.md#date)) |
+dob         | [date](Common.md#date)       | SwimSuite Date (see [Common](Common.md)->[Date](Common.md#date)) |
 swimid      | string                       | Swimmer ID as per official body (e.g.: UK, ASA ID number)         |
-address     | [address](Common.md#address) | Address (see [Common](Commond.md)->[Address](Common.md#address))  |
+address     | [address](Common.md#address) | Address (see [Common](Common.md)->[Address](Common.md#address))  |
 entries     | set of [entry](#entry)       | Set of Entry objects (see [Entry](#entry) )                       |
 
 ### Example
