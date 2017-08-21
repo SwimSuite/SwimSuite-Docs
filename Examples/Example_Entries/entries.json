@@ -1,0 +1,41 @@
+[{
+  "id": "536e32bc-b5fa-496c-a2ef-c5f7ec99f889",
+  "name": "Example Team",
+  "abbr": "EXMP",
+  "address": [{
+    "line1": "Address Line 1",
+    "city": "Exampletown",
+    "county": "Exampleshire",
+    "postcode": "EX4 1MP",
+    "country": "UK"
+  }],
+  "phone": [
+    "01234 567890"
+  ],
+  "email": [
+    "entries@exampleclub.org"
+  ],
+  "athletes": [{
+    "id": "a0e5b64b-3807-4f53-8083-fd97fd3753c4",
+    "surname": "Bloggs",
+    "firstname": "Joseph",
+    "middlenames": "Edwin",
+    "prefname": "Joe",
+    "gender": "m",
+    "email": "joebloggs@example.com",
+    "dob": "1997-01-01",
+    "swimid": "0123456",
+    "address": {
+      "line1": "Address Line 1",
+      "city": "Exampletown",
+      "county": "Exampleshire",
+      "postcode": "EX4 1MP",
+      "country": "UK"
+    },
+    "entries": [{
+      "id": "4bbfc6c7-891a-4e48-a6d7-47503221395e",
+      "number": 101,
+      "time": 61.01
+    }]
+  }]
+}]
