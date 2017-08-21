@@ -51,7 +51,7 @@ abbr     | string                              | Team abbreviation (max 4 chars)
 address  | set of [address](Common.md#address) | Set of Addresses (see [Common](Common.md)->[Address](Common.md#address)) |
 phone    | set of string                       | Set of phone numbers (this may be meet secretary, coach, etc) (Optional)  |
 email    | set of string                       | Set of email addresses                                                    |
-athletes | set of [athlete](#athlete)          | Set of Athletes (see [Athlete](#Athlete))                                 |
+athletes | set of [athlete](#athlete)          | Set of Athletes (see [Athlete](#athlete))                                 |
 
 ### Example
 
