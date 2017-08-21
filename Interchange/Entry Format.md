@@ -1,12 +1,12 @@
-# SwimSuite Entry File Format
+# SwimSuite Entry Format
 
-This file documents the SwimSuite Entry File Format. SwimSuite Entry File Format is used to interchange data between Swimming Competition Entry Managers and SwimSuite. It describes the files used, the fields and how the file should be organised.
+This file documents the SwimSuite Entry Format. SwimSuite Entry Format is used to interchange data between Swimming Competition Entry Managers and SwimSuite. It describes the files used, the fields and how the file should be organised.
 
 # File
 
-The Entry File Format is encoded using JSON. The nature of the JSON objects is described below.
+The Entry Format is encoded using JSON. The nature of the JSON objects is described below.
 
-The Entry File is packaged inside a gzip archive along with an MD5 checksum. The extension of a SwimSuite Entry File is `.ssen`.
+The Entry file is packaged inside a gzip archive along with an MD5 checksum. The extension of a SwimSuite Entry File is `.ssen` (from `SwimSuite ENtry`).
 
 The layout of the `.ssen` is as follows:
 
